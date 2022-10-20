@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MPK5BZP');</script>
+<!-- End Google Tag Manager -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="The game you will love: You will earn points for getting questions right and if you get them wrong, you will lose points but it is super fun to play so have your child try himath now!">
+        <link rel="icon" href="/media/himathfavicon.png">
+        <title>Himath Game</title>
+        <base href="http://treedeveloper.com">
+                <style title="Hide disclamer">
+            .disclaimer {
+                display: none;
+            }
+        </style>
+        <script src="himath.js">
+        </script>
+    </head>
+    <body>
+        <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPK5BZP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+        <style>
+            body {
+                font-family: arial;
+            }
+            .buttons {
+                display: none;
+            }
+            .afld {
+                display: none;
+            }
+            
+            button {
+                border-color: #770000;
+                border-radius: 5px;
+                background-color: #cc0000;
+                color: #dcdcdc;
+            }
+            
+            button:hover {
+                border-color: #e2e2e2;
+                border-radius: 5px;
+                background-color: #cc0000;
+                color: #dcdcdc;
+            }
+            
+            input {
+                border-color: red;
+                border-radius: 5px;
+            }
+            </style>
+            <noscript>
+               <center>
+                           <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    <br><br>
+        <br><br>
+        <br>
+        <br>
+        <img id="logo" src="/media/himathlogos/original.png" width="500px" height="170px">
+        <p>Your browser disabled JavaScript or it does not support it. Please enable JavaScript to play the game.</p>
+               </center>
+            </noscript>
+        <main style="display: none;">
+            <center>
+                <div style="display: none;" id="locompat">
+                    <p>Low Compatibility Mode is turned on.</p>
+                    <a href="/games/himath/play.html#" onclick="locompatoff()">Turn off</a>
+                    <br>
+                    <br>
+                </div>
+            <audio controls loop>
+                <source src="/media/himathmusic.mp3" type="audio/mpeg">
+            </audio>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    <br><br>
+        <br><br>
+        <br>
+        <br>
+        <img id="logo" src="/media/himathlogos/original.png" width="500px" height="170px">
+        <p id="maintxt">Loading...</p>
+        <div id="gamemode" style="display: none;">
+            <h1>Select a gamemode:</h1>
+            <button onclick="gamemodehome()">Home</button>
+            <p style="color: green;">Unlock House</p>
+            <p style="color: green;">Play Mini-Games</p>
+            <p style="color: green;">Free to play</p>
+            <button onclick="gamemodeschool()">School</button>
+            <p style="color: gray;">Limited access</p>
+            <p style="color: green;">Free to play</p>
+        </div>
+        <div id="startscreen" style="display: none;">
+            <button onclick="play()">Play</button>
+            <button onclick="settings()">Settings</button>
+            <button onclick="house()" id="limit">House</button>
+            <button onclick="help()">Help</button>
+        </div>
+        <p id="points" style="display: none;">Points: 0</p>
+        <p id="questions" style="display: none;">Questions: 0</p>
+        <button id="nextbtn1" style="display: none;" onclick="math1()">Next</button>
+        <br id="br1">
+        <button id="nextbtn2" style="display: none;" onclick="math2()">Next</button>
+        <br id="br2">
+        <button id="nextbtn3" style="display: none;" onclick="math3()">Next</button>
+        <br id="br3">
+        <button id="nextbtn4" style="display: none;" onclick="math4()">Next</button>
+        <br id="br4">
+        <button id="ansrdiff" style="display: none;" onclick="startgame()">Back</button>
+        <div id="buttons" class="buttons">
+            <button onclick="math1()">Plus</button>
+            <button onclick="math2()">Minus</button>
+            <button onclick="math3()">Multiplication</button>
+            <button onclick="math4()">Division</button>
+            <button onclick="randomizemath()">Randomize</button>
+            <br>
+            <br>
+            <button onclick="startgame()">Back</button>
+        </div>
+        <div id="answerfield" class="afld">
+            <input type="text" placeholder="Your answer..." id="answertextfld">
+            <button onclick="answermath()">Answer</button>
+            <br>
+            <br>
+            <button onclick="startgame()">Back</button>
+            <br>
+            <br>
+            <a href="/games/himath/play.html#" onclick="hint()"><img src="/media/help-phone.png" alt="You want help? Click me!" width="16px" height="28px"></a>
+        </div>
+        <div id="settings" style="display: none;">
+            <h1>Settings</h1>
+            <button onclick="setting('difficulty')">Difficulty</button>
+            <button onclick="setting('changegamemode')">Gamemode</button>
+            <button onclick="setting('info')">Info</button>
+            <br>
+            <div id="difficulty" style="display: none;">
+                <h2>Difficulty</h2>
+                <button onclick="difficulty(1)">Easy</button>
+                <button onclick="difficulty(2)">Normal</button>
+                <button onclick="difficulty(3)">Hard</button>
+                <button onclick="difficulty(4)">eXtreme</button>
+                <h3>Custom difficulty</h3>
+                <p>You can only enter a value between 1 and a million.</p>
+                <input type="text" id="customdiff" placeholder="Enter the number...">
+                <button onclick="difficulty(5)">Make Changes</button>
+            </div>
+            <div id="changegamemode" style="display: none;">
+                <h2>Gamemode</h2>
+                <p>Your current gamemode is: <span id="currentgamemode"></span></p>
+            </div>
+            <div id="info" style="display: none;">
+                <h2>Info</h2>
+                <p>Device Type: <span id="dvtype">Undetected</span></p>
+                <h2>About</h2>
+                <p>Version: 1.4</p>
+                <p>Developed by <a href="https://www.youtube.com/channel/UCGCLYTWEPECJQMbJHniX4mA" target="_blank">The TreeDev</a></p>
+                <p>Submit errors at the <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiiyGBpgJW752aAKajE8Uq7wrH-8w8qJCxLHWGnUjM1CMVSw/viewform" target="_blank">Error reporting center</a>.</p>
+            </div>
+            <br>
+            <button onclick="startgame()">Back</button>
+        </div>
+        <div id="helpscreen" style="display: none;">
+            <h1>Help</h1>
+            <h2>Operations</h2>
+            <h3>Plus</h3>
+            <p>Plus is adding numbers together so for example:<br>
+            1 + 1 is equal to 2.</p>
+            <h3>Minus</h3>
+            <p>Minus is removing numbers so think of 2 - 1 being 1.<br>That is because we are removing 1 from 2.</p>
+            <h3>Multiplication</h3>
+            <p style="color: red;">Things are gonna get tricky!</p>
+            <p>Multiplication is all about skip-counting so if we did 5 * 5,<br>We would need to skip-count by 5's 5 times like this: 5, 10, 15, 20, 25. So the answer is 25.</p>
+            <h3>Division</h3>
+            <p>If you know multiplication, Division is the oppisite of multiplication so<br>if we had a multiplication question and we had to convert it into division,<br>we need to put the answer of the multiplication question into the first number of the division question and the first<br>number of the multiplication question is the answer of the division question so 25 / 5 would equal 5 because 5 * 5 equals 25.</p>
+            <button onclick="startgame()">Back</button>
+        </div>
+        <div width="1028" height="578" id="house" style="display: none; background-image: url('/media/himath_house.png');">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <img id="avatar1" style="display: none;" src="/media/himath-avatars/default.png" width="200" height="350">
+            <img id="avatar2" style="display: none;" src="/media/himath-avatars/mid-default.png" width="200" height="350">
+            <img id="avatar3" style="display: none;" src="/media/himath-avatars/dark-default.png" width="200" height="350">
+            <img id="avatar4" style="display: none;" src="/media/himath-avatars/eyegreen-default.png" width="200" height="350">
+            <img id="avatar5" style="display: none;" src="/media/himath-avatars/eyegreen-mid-default.png" width="200" height="350">
+            <img id="avatar6" style="display: none;" src="/media/himath-avatars/eyegreen-dark-default.png" width="200" height="350">
+            <img id="avatar7" style="display: none;" src="/media/himath-avatars/eyeblue-default.png" width="200" height="350">
+            <img id="avatar8" style="display: none;" src="/media/himath-avatars/eyeblue-mid-default.png" width="200" height="350">
+            <img id="avatar9" style="display: none;" src="/media/himath-avatars/eyeblue-dark-default.png" width="200" height="350">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <div id="house2" style="display: none;">
+            <br>
+            <button onclick="changeavatar(changedavatar = 1)">Default</button>
+            <button onclick="changeavatar(changedavatar = 2)">Mid Default</button>
+            <button onclick="changeavatar(changedavatar = 3)">Dark Default</button>
+            <button onclick="changeavatar(changedavatar = 4)">Green Eyes Default</button>
+            <button onclick="changeavatar(changedavatar = 5)">Green Eyes Mid Default</button>
+            <button onclick="changeavatar(changedavatar = 6)">Green Eyes Dark Default</button>
+            <button onclick="changeavatar(changedavatar = 7)">Blue Eyes Default</button>
+            <button onclick="changeavatar(changedavatar = 8)">Blue Eyes Mid Default</button>
+            <button onclick="changeavatar(changedavatar = 9)">Blue Eyes Dark Default</button>
+            <br>
+            <br>
+            <button onclick="petroom()">Pet Room</button>
+            <button onclick="minigames()">Mini-Games</button>
+            <button onclick="backyard()">Backyard</button>
+            <button onclick="startgame()">Back</button>
+        </div>
+        <div id="minigames" style="display: none;">
+            <h1>Mini-Games</h1>
+            <iframe src="https://scratch.mit.edu/projects/680614235/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+            <img id="avatarm1" style="display: none;" src="/media/himath-avatars/default.png" width="200" height="350">
+            <img id="avatarm2" style="display: none;" src="/media/himath-avatars/mid-default.png" width="200" height="350">
+            <img id="avatarm3" style="display: none;" src="/media/himath-avatars/dark-default.png" width="200" height="350">
+            <img id="avatarm4" style="display: none;" src="/media/himath-avatars/eyegreen-default.png" width="200" height="350">
+            <img id="avatarm5" style="display: none;" src="/media/himath-avatars/eyegreen-mid-default.png" width="200" height="350">
+            <img id="avatarm6" style="display: none;" src="/media/himath-avatars/eyegreen-dark-default.png" width="200" height="350">
+            <img id="avatarm7" style="display: none;" src="/media/himath-avatars/eyeblue-default.png" width="200" height="350">
+            <img id="avatarm8" style="display: none;" src="/media/himath-avatars/eyeblue-mid-default.png" width="200" height="350">
+            <img id="avatarm9" style="display: none;" src="/media/himath-avatars/eyeblue-dark-default.png" width="200" height="350">
+            <br>
+            <button onclick="house()">Back</button>
+        </div>
+        <div style="display: none; background-image: url('/media/himath-backyard.png'); width: 954px;" id="backyard">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <img id="avatarb1" style="display: none;" src="/media/himath-avatars/default.png" width="200" height="350">
+            <img id="avatarb2" style="display: none;" src="/media/himath-avatars/mid-default.png" width="200" height="350">
+            <img id="avatarb3" style="display: none;" src="/media/himath-avatars/dark-default.png" width="200" height="350">
+            <img id="avatarb4" style="display: none;" src="/media/himath-avatars/eyegreen-default.png" width="200" height="350">
+            <img id="avatarb5" style="display: none;" src="/media/himath-avatars/eyegreen-mid-default.png" width="200" height="350">
+            <img id="avatarb6" style="display: none;" src="/media/himath-avatars/eyegreen-dark-default.png" width="200" height="350">
+            <img id="avatarb7" style="display: none;" src="/media/himath-avatars/eyeblue-default.png" width="200" height="350">
+            <img id="avatarb8" style="display: none;" src="/media/himath-avatars/eyeblue-mid-default.png" width="200" height="350">
+            <img id="avatarb9" style="display: none;" src="/media/himath-avatars/eyeblue-dark-default.png" width="200" height="350">
+        </div>
+        <div id="backyard2" style="display: none;">
+            <br>
+            <button onclick="pool()">Play in Pool</button>
+            <button onclick="trampoline()">Play on Trampoline</button>
+            <button onclick="bbq()">Play Barbecue Flipper</button>
+            <br>
+            <br>
+            <button onclick="house()">House</button>
+        </div>
+        <div id="trampoline" style="display: none;">
+            <h1>Trampoline</h1>
+            <p>Jump to get points!<br>If you jump 10 times, you will have no jumps for 10 seconds.<br>Have fun!</p>
+            <iframe src="https://scratch.mit.edu/projects/685296661/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+            <br>
+            <button onclick="backyard()">Backyard</button>
+        </div>
+        <div id="trampolinemobile" style="display: none;">
+            <h1>Trampoline</h1>
+            <p>Jump to get points!<br>If you jump 10 times, you will have no jumps for 10 seconds.<br>Have fun!</p>
+            <iframe src="https://scratch.mit.edu/projects/685348371/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+            <br>
+            <button onclick="backyard()">Backyard</button>
+        </div>
+        <div id="pool" style="display: none;">
+            <h1>Pool</h1>
+            <p>Catch fish to earn points!<br>To catch fish, press SPACE while on a fish to catch it.<br>
+            Use Left, Right, Up and Down arrows to move.<br>Have fun!</p>
+            <iframe src="https://scratch.mit.edu/projects/685290973/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+            <br>
+            <button onclick="backyard()">Backyard</button>
+        </div>
+        <div id="poolmobile" style="display: none;">
+            <h1>Pool</h1>
+            <p>Catch fish to earn points!<br>To catch fish, touch the CATCH button while on a fish to catch it.<br>
+            Use Left, Right, Up and Down buttons to move.<br>Have fun!</p>
+            <iframe src="https://scratch.mit.edu/projects/685349491/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+            <br>
+            <button onclick="backyard()">Backyard</button>
+        </div>
+        <div id="bbq" style="display: none;">
+            <h1>Barbecue Flipper</h1>
+            <p>Tap or click the patty to flip it.<br>
+            There is 5 seconds until the patty gets burnt and you lose.<br>
+            If you want more seconds, flip the patty 10 times and you will gain 5 seconds.<br>
+            Have fun!</p>
+            <iframe src="https://scratch.mit.edu/projects/691531452/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+            <br>
+            <button onclick="backyard()">Backyard</button>
+        </div>
+        <div id="petroom" style="display: none; background-image: url('media/himathpetroom1.png');  margin-left: auto; margin-right: auto; width: 79%;">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <img id="avatarp1" style="display: none;" src="/media/himath-avatars/default.png" width="200" height="350">
+            <img id="avatarp2" style="display: none;" src="/media/himath-avatars/mid-default.png" width="200" height="350">
+            <img id="avatarp3" style="display: none;" src="/media/himath-avatars/dark-default.png" width="200" height="350">
+            <img id="avatarp4" style="display: none;" src="/media/himath-avatars/eyegreen-default.png" width="200" height="350">
+            <img id="avatarp5" style="display: none;" src="/media/himath-avatars/eyegreen-mid-default.png" width="200" height="350">
+            <img id="avatarp6" style="display: none;" src="/media/himath-avatars/eyegreen-dark-default.png" width="200" height="350">
+            <img id="avatarp7" style="display: none;" src="/media/himath-avatars/eyeblue-default.png" width="200" height="350">
+            <img id="avatarp8" style="display: none;" src="/media/himath-avatars/eyeblue-mid-default.png" width="200" height="350">
+            <img id="avatarp9" style="display: none;" src="/media/himath-avatars/eyeblue-dark-default.png" width="200" height="350">
+        </div>
+        <div id="petroom2" style="display: none;">
+            <br>
+            <button onclick="petchange(2)">Dog</button>
+            <button onclick="petchange(3)">Cat</button>
+            <button onclick="petchange(1)">Raccoon</button>
+            <br>
+            <br>
+            <button onclick="playpet()">Play</button>
+            <button onclick="house()">House</button>
+        </div>
+        <div id="petplay" style="display: none;">
+            <iframe src="https://scratch.mit.edu/projects/697289736/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+            <button onclick="petroom()">Pet Room</button>
+        </div>
+        <div id="petplay2" style="display: none;">
+            <iframe src="https://scratch.mit.edu/projects/700193944/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+            <button onclick="petroom()">Pet Room</button>
+        </div>
+        <div id="petplay3" style="display: none;">
+            <iframe src="https://scratch.mit.edu/projects/700194056/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+            <button onclick="petroom()">Pet Room</button>
+        </div>
+            </center>
+        <div id="tst" style="display: none;"></div>
+        </main>
+    </body>
+</html>
